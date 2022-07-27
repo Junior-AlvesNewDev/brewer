@@ -1,6 +1,7 @@
 package com.algaworks.brewer.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.mapping.List;
 
 @Entity
 @Table(name = "estilo")
@@ -24,7 +24,7 @@ public class Estilo implements Serializable {
 	private String nome;
 	
 	@OneToMany(mappedBy = "estilo")
-	private List cervejas;
+	private List<Cerveja> cervejas;
 
 	public String getNome() {
 		return nome;

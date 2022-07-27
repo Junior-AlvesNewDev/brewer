@@ -3,13 +3,13 @@ package com.algaworks.brewer.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.algaworks.brewer.model.Estilo;
+//import com.algaworks.brewer.model.Estilo;
 
 @Controller
 public class EstiloController {
 	
 	@RequestMapping("/estilos/novo")
-	public String novo(Estilo estilo) {		
+	public String novo() {		
 		return "estilo/CadastroEstilo";
 	}
 

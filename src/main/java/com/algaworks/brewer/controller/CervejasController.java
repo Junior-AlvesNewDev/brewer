@@ -32,13 +32,16 @@ public class CervejasController {
 
 	@RequestMapping(value = "/cervejas/novo", method = RequestMethod.POST)
 	public ModelAndView cadastrar(@Valid Cerveja cerveja, BindingResult result, Model model, RedirectAttributes Attributes) {
-		if (result.hasErrors()) {
+		/*if (result.hasErrors()) {
 			return novo(cerveja);			
-		}
+		}*/
 		
 		// Salvar no Banco de dados...
 		Attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso!");
 		System.out.println(">>> sku:" + cerveja.getSku());
+		System.out.println(">>> sabor:" + cerveja.getSabor());
+		System.out.println(">>> Origem:" + cerveja.getOrigem());		
+		System.out.println(">>> Estilo:" + cerveja.getEstilo());
 		return new ModelAndView("redirect:/cervejas/novo");
 	}
 	
