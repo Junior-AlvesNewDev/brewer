@@ -25,6 +25,8 @@ import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ITemplateResolver;
+
+import com.algaworks.brewer.Thymeleaf.BrewerDialect;
 import com.algaworks.brewer.controller.CervejasController;
 import com.algaworks.brewer.controller.converter.EstiloConverter;
 
@@ -58,7 +60,7 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 		engine.setTemplateResolver(templateResolver());
 				
 		engine.addDialect(new LayoutDialect());
-		//engine.addDialect(new BrewerDialect());
+		engine.addDialect(new BrewerDialect());
 		//engine.addDialect(new DataAttributeDialect());
 		return engine;
 	}
