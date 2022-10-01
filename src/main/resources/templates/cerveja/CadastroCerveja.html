@@ -117,7 +117,7 @@
 			</div>
 			
 			<div class="row">
-				<div class="from-group col-sm-12">
+				<div class="form-group col-sm-12">
 					<label class="control-label">Foto</label>
 					
 					<div id="upload-drop" class="bw-upload">
@@ -138,34 +138,27 @@
 
 </section>
 	
-	<footer class="aw-layout-footer  js-content">
-		<div class="container-fluid">
-			<span class="aw-footer-disclaimer">&copy; 2022 Deviando. Todos os direitos reservados.</span>
-		</div>
-	</footer>	
-
+	
 <th:block layout:fragment="javascript-extra">
 	<script th:src="@{/javascripts/estilo.cadastro-rapido.js}"></script>
 	<script th:src="@{/javascripts/vendors/uikit.min.js}"></script>
 	<script th:src="@{/javascripts/vendors/upload.min.js}"></script>
-</th:block>
-	
+		
 	<script>
 	$(function(){
 		var settings = {
-				type: 'json',
-				filelimit:1,
-				allow: '*.(jpg|jpeg|png)',
-				action: '/brewer/fotos'
+						type: 'json',
+						filelimit:1,
+						allow: '*.(jpg|jpeg|png)',
+						action: '/brewer/fotos'
 		};
 		
 		UIkit.uploadSelect($('#upload-select'), settings);
 		UIkit.uploadDrop($('#upload-drop'), settings);
 	});
 	</script>
-	
-<script src="/brewer/layout/javascripts/vendors.min.js"></script>
-<script src="/brewer/layout/javascripts/algaworks.min.js"></script>
-	
+			
+</th:block>	
+		
 </body>	
 </html>
