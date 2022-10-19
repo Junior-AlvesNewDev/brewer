@@ -45,6 +45,15 @@ public class FotoStorageLocal implements FotoStorage{
 			return novoNome;
 		}
 		
+		@Override
+		public byte[] recuperarFotoTemporaria(String nome){
+			try {
+				return Files.readAllBytes(this.localTemporario.resolve(nome));
+			} catch (IOException e) {
+				throw new RuntimeException("Erro carregando a foto temporária", e);
+			}
+		}
+		
 		private void criarPastas() {
 			try {
 				Files.createDirectories(this.local);
@@ -65,7 +74,7 @@ public class FotoStorageLocal implements FotoStorage{
 			String novoNome = UUID.randomUUID().toString() + "_" + nomeOriginal;
 			
 			if (logger.isDebugEnabled()){
-				logger.debug("Nome original: %s, novo nome: %s", nomeOriginal, novoNome);
+				logger.debug(String.format("Nome original: %s, novo nome: %s", nomeOriginal, novoNome));
 			}
 			
 			return novoNome;
