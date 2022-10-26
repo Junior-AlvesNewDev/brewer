@@ -9,7 +9,7 @@
 	
 	<Logger>
 		
-		<Logger name="com.algworks.brewer.controller" level="error"/>
+		<Logger name="com.algworks.brewer.controller" level="debug"/>
 		
 		<Logger name="org.hibernate" level="debug"/>
 		
